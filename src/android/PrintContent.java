@@ -88,6 +88,9 @@ class PrintContent
 
             if (path.startsWith("base64:"))
             {
+                if (path.startsWith("base64://JVBERi0")) {
+                    return ContentType.PDF;
+                }
                 try
                 {
                     mime = URLConnection.guessContentTypeFromStream(io.openBase64(path));
